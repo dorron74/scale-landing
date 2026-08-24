@@ -1124,41 +1124,6 @@
   </div>
 </div>
 
-<div class="scope-modal" id="leadModal" onclick="if(event.target===this) closeModal('leadModal')">
-  <div class="scope-modal-card" role="dialog" aria-modal="true" aria-labelledby="leadModalTitle" tabindex="-1">
-    <div class="scope-modal-head">
-      <div>
-        <h3 id="leadModalTitle">מלאו את הפרטים לבדיקת התאמה לאיפיון העסק</h3>
-      </div>
-      <button class="scope-modal-close" type="button" aria-label="סגירה" onclick="closeModal('leadModal')">✕</button>
-    </div>
-    <form class="lead-form" id="leadForm" onsubmit="sendLeadToWhatsapp(event)">
-      <label>שם מלא
-        <input type="text" id="leadName" required placeholder="איך קוראים לך?">
-      </label>
-      <label>טלפון
-        <input type="tel" id="leadPhone" required placeholder="050-0000000">
-      </label>
-      <label>סוג העסק
-        <input type="text" id="leadBiz" required placeholder="למשל: קליניקה, סוכנות ביטוח, סטודיו...">
-      </label>
-      <label>זמן נוח לדבר
-        <select id="leadTime" required>
-          <option value="" disabled selected>בחרו זמן מועדף</option>
-          <option value="בוקר">בוקר ☀️</option>
-          <option value="צהריים">צהריים 🌤️</option>
-          <option value="ערב">ערב 🌙</option>
-        </select>
-      </label>
-      <button class="btn btn-primary" type="submit">שליחה</button>
-    </form>
-    <div class="lead-thanks" id="leadThanks" style="display:none;">
-      <div class="ico">🙌</div>
-      <p>פתחנו לכם וואטסאפ עם הפרטים שמילאתם — רק צריך לשלוח את ההודעה ונחזור אליכם בהקדם לתיאום שיחת האיפיון. הפרטים לא נשמרים אצלנו בשום מקום אחר.</p>
-    </div>
-  </div>
-</div>
-
 <div class="scope-modal" id="privacyModal" onclick="if(event.target===this) closeModal('privacyModal')">
   <div class="scope-modal-card" role="dialog" aria-modal="true" aria-labelledby="privacyModalTitle" tabindex="-1">
     <div class="scope-modal-head">
@@ -1169,12 +1134,11 @@
       <h4>אין מעקב ואין עוגיות שיווקיות</h4>
       <p>האתר הזה סטטי לחלוטין: אין בו Google Analytics, Meta Pixel או כל כלי מעקב אחר, ואין קובצי Cookie לצרכי שיווק, פרסום או סטטיסטיקה. אנחנו לא אוספים ולא עוקבים אחרי הגלישה שלך באתר.</p>
       <p>האתר כן שומר מקומית בדפדפן שלך (localStorage) שני דברים בלבד, לנוחיותך: (1) אם כבר סגרת את באנר העוגיות, כדי לא להציג אותו שוב; (2) העדפות נגישות שבחרת בתפריט הנגישות (גודל טקסט, ניגודיות וכו'). המידע הזה נשמר רק על המכשיר שלך, לא מגיע אלינו ולא לשום שרת.</p>
-      <h4>טופס יצירת הקשר — אילו נתונים, ולמה</h4>
-      <p>כשממלאים את טופס "לתיאום שיחת איפיון", אנו מבקשים 4 פרטים בלבד: שם מלא, מספר טלפון, סוג העסק שלך, וזמן מועדף לשיחה. המטרה היחידה לאיסוף הפרטים האלו היא תיאום שיחת איפיון ראשונית — לא לכל מטרה אחרת, ולא לדיוור שיווקי.</p>
-      <p>הפרטים <strong>לא נשמרים בשום שרת או מסד נתונים של האתר</strong>. הם רק משמשים לבניית הודעת וואטסאפ מוכנה מראש, שנפתחת בין הדפדפן שלך לבין המספר העסקי שלנו — ורק לאחר שאתה בעצמו שולח אותה, ההודעה מגיעה אלינו ישירות לוואטסאפ, בדיוק כמו כל שיחת וואטסאפ רגילה. מרגע זה, השיחה מנוהלת בוואטסאפ שלך מול וואטסאפ העסקי שלנו, בכפוף למדיניות הפרטיות של וואטסאפ עצמה.</p>
+      <h4>יצירת קשר דרך האתר</h4>
+      <p>כפתורי "לשיחת איפיון לחץ כאן" באתר לא מעבירים שום טופס ולא אוספים שום פרט — הם פשוט פותחים שיחת וואטסאפ ישירה בינך לבין המספר העסקי שלנו, עם הודעת פתיחה כללית שאתה יכול לשנות לפני השליחה. האתר עצמו לא שומר, לא מעביר ולא מקבל שום מידע כתוצאה מהלחיצה — עד שאתה בעצמו שולח הודעה בוואטסאפ, ומאותו רגע השיחה מתנהלת בוואטסאפ שלך מול וואטסאפ העסקי שלנו, בכפוף למדיניות הפרטיות של וואטסאפ עצמה.</p>
       <p>הפרטים אינם מועברים או משותפים עם שום צד שלישי מעבר לכך. בעל השליטה במידע שנשלח דרך וואטסאפ הוא דור רון (העוסק המורשה מפעיל האתר). </p>
       <h4>הזכויות שלך</h4>
-      <p>מאחר שהאתר עצמו לא שומר את הפרטים שלך במאגר מידע, אין ברשותנו "רשומה" שלך למחוק או לתקן דרך האתר. אם תרצה שנמחק שיחת וואטסאפ קודמת מולנו, פשוט תבקש זאת ישירות בהודעה — ונמחק את השיחה מהצד שלנו.</p>
+      <p>מאחר שהאתר עצמו לא אוסף ולא שומר עליך שום פרט במאגר מידע, אין ברשותנו "רשומה" שלך למחוק או לתקן דרך האתר. אם תרצה שנמחק שיחת וואטסאפ קודמת מולנו, פשוט תבקש זאת ישירות בהודעה — ונמחק את השיחה מהצד שלנו.</p>
       <h4>קניין רוחני</h4>
       <p>כל התוכן, המיתוג, הלוגו והעיצוב באתר זה שייכים ל-Scale (דור רון) ואין להעתיק או לעשות בהם שימוש מסחרי ללא אישור.</p>
       <h4>יצירת קשר בנושא פרטיות</h4>
@@ -1295,7 +1259,7 @@
 
 <section class="mid-cta reveal">
   <div class="wrap mid-cta-wrap">
-    <a class="btn btn-primary" href="#" onclick="event.preventDefault(); openModal('leadModal', this);">לשיחת איפיון לחץ כאן</a>
+    <a class="btn btn-primary" href="https://wa.me/972522219958?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A0%D7%99%20%D7%A8%D7%95%D7%A6%D7%94%20%D7%9C%D7%AA%D7%90%D7%9D%20%D7%A9%D7%99%D7%97%D7%AA%20%D7%90%D7%99%D7%A4%D7%99%D7%95%D7%9F" target="_blank" rel="noopener">לשיחת איפיון לחץ כאן</a>
   </div>
 </section>
 
@@ -1405,7 +1369,7 @@
   })();
   document.addEventListener('keydown', function(e){
     if(e.key === 'Escape'){
-      ['scopeModal','leadModal','privacyModal','accessibilityModal'].forEach(function(id){
+      ['scopeModal','privacyModal','accessibilityModal'].forEach(function(id){
         var m = document.getElementById(id);
         if(m && m.classList.contains('open')) closeModal(id);
       });
@@ -1436,18 +1400,6 @@
     if(!v) return;
     if(v.paused){ v.play(); } else { v.pause(); }
   }
-  function sendLeadToWhatsapp(event){
-    event.preventDefault();
-    var name = document.getElementById('leadName').value;
-    var phone = document.getElementById('leadPhone').value;
-    var biz = document.getElementById('leadBiz').value;
-    var time = document.getElementById('leadTime').value;
-    var text = 'היי, אני ' + name + ' (' + phone + '), בעל/ת עסק מסוג "' + biz + '". אשמח לתאם שיחת איפיון, זמן מועדף: ' + time + '.';
-    window.open('https://wa.me/972522219958?text=' + encodeURIComponent(text), '_blank', 'noopener');
-    document.getElementById('leadForm').style.display = 'none';
-    document.getElementById('leadThanks').style.display = 'block';
-  }
-
   /* ---------- COOKIE BANNER ---------- */
   function dismissCookieBanner(){
     try{ localStorage.setItem('scaleCookieAck', '1'); }catch(e){}
