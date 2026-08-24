@@ -1228,16 +1228,28 @@
       <button class="carousel-btn prev" type="button" aria-label="הקודם" onclick="document.getElementById('videoTrack').scrollBy({left:document.getElementById('videoTrack').clientWidth,behavior:'smooth'})"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></button>
       <button class="carousel-btn next" type="button" aria-label="הבא" onclick="document.getElementById('videoTrack').scrollBy({left:-document.getElementById('videoTrack').clientWidth,behavior:'smooth'})"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"/></svg></button>
       <div class="testi-videos-grid" id="videoTrack">
-        <div class="testi-video-card v1 has-footer">
+        <div class="testi-video-card v2 has-footer">
           <div class="video-media" role="button" tabindex="0" aria-label="הפעלה או השהיה של סרטון העדות" onclick="toggleVideo(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleVideo(this);}">
-            <video playsinline preload="metadata" onplay="this.closest('.testi-video-card').classList.add('playing')" onpause="this.closest('.testi-video-card').classList.remove('playing')" src="assets/videos/testi-1.mp4">
-              <track kind="captions" srclang="he" label="עברית" src="assets/videos/testi-1.vtt" default>
+            <video playsinline preload="metadata" onplay="this.closest('.testi-video-card').classList.add('playing')" onpause="this.closest('.testi-video-card').classList.remove('playing')" src="assets/videos/testi-5.mp4">
+              <track kind="captions" srclang="he" label="עברית" src="assets/videos/testi-5.vtt" default>
             </video>
             <div class="play-btn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div>
           </div>
           <div class="video-social-footer">
-            <div class="video-names"><strong>דוד תמיר</strong><span>מחנה הורה וילד</span></div>
-            <a class="social-badge fb" href="https://www.facebook.com/Dato.Tamir/" target="_blank" rel="noopener" aria-label="פייסבוק"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M13.5 21v-8h2.7l.4-3.1h-3.1V8c0-.9.25-1.5 1.55-1.5H16.7V3.7c-.28-.04-1.25-.12-2.37-.12-2.35 0-3.96 1.43-3.96 4.07V10H7.6v3.1h2.77v8h3.13z"/></svg></a>
+            <div class="video-names"><strong>דביר טפירו</strong><span>שווים יותר — מועדון הטבות לאנשי מילואים וכוחות הביטחון</span></div>
+            <a class="social-badge ig" href="https://www.instagram.com/shavimyoter/" target="_blank" rel="noopener" aria-label="אינסטגרם"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1" fill="currentColor" stroke="none"/></svg></a>
+          </div>
+        </div>
+        <div class="testi-video-card v1 has-footer">
+          <div class="video-media" role="button" tabindex="0" aria-label="הפעלה או השהיה של סרטון העדות" onclick="toggleVideo(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleVideo(this);}">
+            <video playsinline preload="metadata" onplay="this.closest('.testi-video-card').classList.add('playing')" onpause="this.closest('.testi-video-card').classList.remove('playing')" src="assets/videos/testi-4.mp4">
+              <track kind="captions" srclang="he" label="עברית" src="assets/videos/testi-4.vtt" default>
+            </video>
+            <div class="play-btn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div>
+          </div>
+          <div class="video-social-footer">
+            <div class="video-names"><strong>בר מלול</strong><span>מאמן כושר, עוזר לגברים רזים לעלות במשקל ולפתח מסת שריר</span></div>
+            <a class="social-badge ig" href="https://www.instagram.com/bar__malul/" target="_blank" rel="noopener" aria-label="אינסטגרם"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1" fill="currentColor" stroke="none"/></svg></a>
           </div>
         </div>
         <div class="testi-video-card v2 has-footer">
@@ -1266,122 +1278,16 @@
         </div>
         <div class="testi-video-card v1 has-footer">
           <div class="video-media" role="button" tabindex="0" aria-label="הפעלה או השהיה של סרטון העדות" onclick="toggleVideo(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleVideo(this);}">
-            <video playsinline preload="metadata" onplay="this.closest('.testi-video-card').classList.add('playing')" onpause="this.closest('.testi-video-card').classList.remove('playing')" src="assets/videos/testi-4.mp4">
-              <track kind="captions" srclang="he" label="עברית" src="assets/videos/testi-4.vtt" default>
+            <video playsinline preload="metadata" onplay="this.closest('.testi-video-card').classList.add('playing')" onpause="this.closest('.testi-video-card').classList.remove('playing')" src="assets/videos/testi-1.mp4">
+              <track kind="captions" srclang="he" label="עברית" src="assets/videos/testi-1.vtt" default>
             </video>
             <div class="play-btn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div>
           </div>
           <div class="video-social-footer">
-            <div class="video-names"><strong>בר מלול</strong><span>מאמן כושר, עוזר לגברים רזים לעלות במשקל ולפתח מסת שריר</span></div>
-            <a class="social-badge ig" href="https://www.instagram.com/bar__malul/" target="_blank" rel="noopener" aria-label="אינסטגרם"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1" fill="currentColor" stroke="none"/></svg></a>
+            <div class="video-names"><strong>דוד תמיר</strong><span>מחנה הורה וילד</span></div>
+            <a class="social-badge fb" href="https://www.facebook.com/Dato.Tamir/" target="_blank" rel="noopener" aria-label="פייסבוק"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M13.5 21v-8h2.7l.4-3.1h-3.1V8c0-.9.25-1.5 1.55-1.5H16.7V3.7c-.28-.04-1.25-.12-2.37-.12-2.35 0-3.96 1.43-3.96 4.07V10H7.6v3.1h2.77v8h3.13z"/></svg></a>
           </div>
         </div>
-        <div class="testi-video-card v2 has-footer">
-          <div class="video-media" role="button" tabindex="0" aria-label="הפעלה או השהיה של סרטון העדות" onclick="toggleVideo(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleVideo(this);}">
-            <video playsinline preload="metadata" onplay="this.closest('.testi-video-card').classList.add('playing')" onpause="this.closest('.testi-video-card').classList.remove('playing')" src="assets/videos/testi-5.mp4">
-              <track kind="captions" srclang="he" label="עברית" src="assets/videos/testi-5.vtt" default>
-            </video>
-            <div class="play-btn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div>
-          </div>
-          <div class="video-social-footer">
-            <div class="video-names"><strong>דביר טפירו</strong><span>שווים יותר — מועדון הטבות לאנשי מילואים וכוחות הביטחון</span></div>
-            <a class="social-badge ig" href="https://www.instagram.com/shavimyoter/" target="_blank" rel="noopener" aria-label="אינסטגרם"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1" fill="currentColor" stroke="none"/></svg></a>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="testi-sub">
-      <h3>עדויות בכתב</h3><div class="rule"></div>
-    </div>
-    <div class="carousel-wrap">
-      <button class="carousel-btn prev" type="button" aria-label="הקודם" onclick="document.getElementById('quoteTrack').scrollBy({left:document.getElementById('quoteTrack').clientWidth,behavior:'smooth'})"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></button>
-      <button class="carousel-btn next" type="button" aria-label="הבא" onclick="document.getElementById('quoteTrack').scrollBy({left:-document.getElementById('quoteTrack').clientWidth,behavior:'smooth'})"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"/></svg></button>
-      <div class="testi-wall" id="quoteTrack">
-      <div class="quote-card">
-        <div class="stars">
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .9-5 4.9 1.3 7-6.3-3.4L5.7 21l1.3-7-5-4.9 7-.9z"/></svg>
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .9-5 4.9 1.3 7-6.3-3.4L5.7 21l1.3-7-5-4.9 7-.9z"/></svg>
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .9-5 4.9 1.3 7-6.3-3.4L5.7 21l1.3-7-5-4.9 7-.9z"/></svg>
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .9-5 4.9 1.3 7-6.3-3.4L5.7 21l1.3-7-5-4.9 7-.9z"/></svg>
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .9-5 4.9 1.3 7-6.3-3.4L5.7 21l1.3-7-5-4.9 7-.9z"/></svg>
-        </div>
-        <div class="quote">"כאן תופיע עדות כתובה אמיתית — עם תוצאה מספרית ומה בדיוק השתנה בעסק שלו."</div>
-        <div class="testi-who">
-          <div class="avatar-ph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="8" r="3.4"/><path d="M5 20c1.2-3.8 4-5.6 7-5.6s5.8 1.8 7 5.6"/></svg></div>
-          <div><div class="nm">שם הלקוח</div><div class="rl">תפקיד, שם העסק</div></div>
-        </div>
-      </div>
-      <div class="quote-card">
-        <div class="stars">
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .9-5 4.9 1.3 7-6.3-3.4L5.7 21l1.3-7-5-4.9 7-.9z"/></svg>
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .9-5 4.9 1.3 7-6.3-3.4L5.7 21l1.3-7-5-4.9 7-.9z"/></svg>
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .9-5 4.9 1.3 7-6.3-3.4L5.7 21l1.3-7-5-4.9 7-.9z"/></svg>
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .9-5 4.9 1.3 7-6.3-3.4L5.7 21l1.3-7-5-4.9 7-.9z"/></svg>
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .9-5 4.9 1.3 7-6.3-3.4L5.7 21l1.3-7-5-4.9 7-.9z"/></svg>
-        </div>
-        <div class="quote">"מקום שמור לעדות נוספת — אפשר גם לצרף צילום מסך וואטסאפ אמיתי מהלקוח, זה יכול להיות ציטוט קצת יותר ארוך כדי לבדוק את הפריסה."</div>
-        <div class="testi-who">
-          <div class="avatar-ph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="8" r="3.4"/><path d="M5 20c1.2-3.8 4-5.6 7-5.6s5.8 1.8 7 5.6"/></svg></div>
-          <div><div class="nm">שם הלקוח</div><div class="rl">תפקיד, שם העסק</div></div>
-        </div>
-      </div>
-      <div class="quote-card">
-        <div class="stars">
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .9-5 4.9 1.3 7-6.3-3.4L5.7 21l1.3-7-5-4.9 7-.9z"/></svg>
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .9-5 4.9 1.3 7-6.3-3.4L5.7 21l1.3-7-5-4.9 7-.9z"/></svg>
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .9-5 4.9 1.3 7-6.3-3.4L5.7 21l1.3-7-5-4.9 7-.9z"/></svg>
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .9-5 4.9 1.3 7-6.3-3.4L5.7 21l1.3-7-5-4.9 7-.9z"/></svg>
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .9-5 4.9 1.3 7-6.3-3.4L5.7 21l1.3-7-5-4.9 7-.9z"/></svg>
-        </div>
-        <div class="quote">"עדות שלישית — מקום שמור לטקסט אמיתי מלקוח מרוצה."</div>
-        <div class="testi-who">
-          <div class="avatar-ph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="8" r="3.4"/><path d="M5 20c1.2-3.8 4-5.6 7-5.6s5.8 1.8 7 5.6"/></svg></div>
-          <div><div class="nm">שם הלקוח</div><div class="rl">תפקיד, שם העסק</div></div>
-        </div>
-      </div>
-      <div class="quote-card">
-        <div class="stars">
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .9-5 4.9 1.3 7-6.3-3.4L5.7 21l1.3-7-5-4.9 7-.9z"/></svg>
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .9-5 4.9 1.3 7-6.3-3.4L5.7 21l1.3-7-5-4.9 7-.9z"/></svg>
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .9-5 4.9 1.3 7-6.3-3.4L5.7 21l1.3-7-5-4.9 7-.9z"/></svg>
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .9-5 4.9 1.3 7-6.3-3.4L5.7 21l1.3-7-5-4.9 7-.9z"/></svg>
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .9-5 4.9 1.3 7-6.3-3.4L5.7 21l1.3-7-5-4.9 7-.9z"/></svg>
-        </div>
-        <div class="quote">"עדות רביעית — ככל שיהיו יותר תוצאות אמיתיות, כך הדף ישדר יותר ביטחון ללקוחות פוטנציאליים שרואים אותו."</div>
-        <div class="testi-who">
-          <div class="avatar-ph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="8" r="3.4"/><path d="M5 20c1.2-3.8 4-5.6 7-5.6s5.8 1.8 7 5.6"/></svg></div>
-          <div><div class="nm">שם הלקוח</div><div class="rl">תפקיד, שם העסק</div></div>
-        </div>
-      </div>
-      <div class="quote-card">
-        <div class="stars">
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .9-5 4.9 1.3 7-6.3-3.4L5.7 21l1.3-7-5-4.9 7-.9z"/></svg>
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .9-5 4.9 1.3 7-6.3-3.4L5.7 21l1.3-7-5-4.9 7-.9z"/></svg>
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .9-5 4.9 1.3 7-6.3-3.4L5.7 21l1.3-7-5-4.9 7-.9z"/></svg>
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .9-5 4.9 1.3 7-6.3-3.4L5.7 21l1.3-7-5-4.9 7-.9z"/></svg>
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .9-5 4.9 1.3 7-6.3-3.4L5.7 21l1.3-7-5-4.9 7-.9z"/></svg>
-        </div>
-        <div class="quote">"עדות חמישית — כל טקסט שתשלח יוחלף כאן בול, בלי לגעת בשאר העיצוב."</div>
-        <div class="testi-who">
-          <div class="avatar-ph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="8" r="3.4"/><path d="M5 20c1.2-3.8 4-5.6 7-5.6s5.8 1.8 7 5.6"/></svg></div>
-          <div><div class="nm">שם הלקוח</div><div class="rl">תפקיד, שם העסק</div></div>
-        </div>
-      </div>
-      <div class="quote-card">
-        <div class="stars">
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .9-5 4.9 1.3 7-6.3-3.4L5.7 21l1.3-7-5-4.9 7-.9z"/></svg>
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .9-5 4.9 1.3 7-6.3-3.4L5.7 21l1.3-7-5-4.9 7-.9z"/></svg>
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .9-5 4.9 1.3 7-6.3-3.4L5.7 21l1.3-7-5-4.9 7-.9z"/></svg>
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .9-5 4.9 1.3 7-6.3-3.4L5.7 21l1.3-7-5-4.9 7-.9z"/></svg>
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .9-5 4.9 1.3 7-6.3-3.4L5.7 21l1.3-7-5-4.9 7-.9z"/></svg>
-        </div>
-        <div class="quote">"עדות שישית — מקום שמור."</div>
-        <div class="testi-who">
-          <div class="avatar-ph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="8" r="3.4"/><path d="M5 20c1.2-3.8 4-5.6 7-5.6s5.8 1.8 7 5.6"/></svg></div>
-          <div><div class="nm">שם הלקוח</div><div class="rl">תפקיד, שם העסק</div></div>
-        </div>
-      </div>
       </div>
     </div>
   </div>
