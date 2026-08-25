@@ -1,5 +1,5 @@
 <script>document.documentElement.lang='he';document.documentElement.dir='rtl';</script>
-<title>Scale — אוטומציה לעסקי שירות</title>
+<title>Scale | אוטומציה לעסקי שירות</title>
 <style>
   @font-face {
     font-family: 'Heebo';
@@ -233,7 +233,30 @@
   .nav-links a:hover::after{transform:scaleX(1);}
   .nav-cta{display:flex;align-items:center;}
   .nav .btn{padding:11px 22px;font-size:14px;}
-  @media (max-width:1000px){ .nav-links{display:none;} }
+  .nav-toggle{
+    display:none;justify-self:end;
+    width:40px;height:40px;border-radius:12px;flex:none;
+    background:var(--paper-alt);border:1px solid var(--line);
+    align-items:center;justify-content:center;cursor:pointer;color:var(--ink);
+  }
+  .nav-toggle svg{width:20px;height:20px;}
+  .nav-toggle .ico-close{display:none;}
+  .nav-toggle[aria-expanded="true"] .ico-open{display:none;}
+  .nav-toggle[aria-expanded="true"] .ico-close{display:block;}
+  @media (max-width:1000px){
+    .nav .wrap{grid-template-columns:auto 1fr auto;}
+    .nav-toggle{display:flex;}
+    .nav-links{
+      display:none;position:absolute;top:100%;inset-inline:0;
+      flex-direction:column;gap:2px;
+      background:var(--paper);border-bottom:1px solid var(--line);
+      padding:12px 28px 18px;box-shadow:0 16px 28px -18px rgba(6,20,22,.35);
+    }
+    .nav-links.open{display:flex;}
+    .nav-links a{padding:13px 4px;font-size:15px;border-bottom:1px solid var(--line);}
+    .nav-links a:last-child{border-bottom:none;}
+    .nav-links a::after{display:none;}
+  }
 
   /* ---------- MESH / DEPTH ---------- */
   .mesh{position:absolute;border-radius:50%;filter:blur(70px);z-index:0;pointer-events:none;}
@@ -897,13 +920,17 @@
 <nav class="nav">
   <div class="wrap">
     <div class="brand"><img src="assets/logo.png" alt="Scale"></div>
-    <div class="nav-links">
-      <a href="#services">שירותים</a>
-      <a href="#process">איך נראה תהליך עבודה</a>
-      <a href="#testimonials">ממליצים</a>
-      <a href="#partners">שותפים עסקיים</a>
-      <a href="#about">קצת עליי</a>
+    <div class="nav-links" id="navLinks">
+      <a href="#services" onclick="closeNavMenu()">שירותים</a>
+      <a href="#process" onclick="closeNavMenu()">איך נראה תהליך עבודה</a>
+      <a href="#testimonials" onclick="closeNavMenu()">ממליצים</a>
+      <a href="#partners" onclick="closeNavMenu()">שותפים עסקיים</a>
+      <a href="#about" onclick="closeNavMenu()">קצת עליי</a>
     </div>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="navLinks" aria-label="פתיחת תפריט ניווט" onclick="toggleNavMenu(this)">
+      <svg class="ico-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+      <svg class="ico-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
   </div>
 </nav>
 
@@ -913,7 +940,7 @@
   <div class="wrap hero-grid">
     <div>
       <h1>מכינים את העסק שלכם<br>ל<em>-Scale.</em></h1>
-      <p class="lead">בונים ומטמיעים מערכות CRM ואוטומציות לעסק שלכם — במחלקות השיווק, המכירות, התפעול והכספים — כדי לייעל את התהליכים הפנים-ארגוניים ולתת לצוות שלכם לעבוד חכם יותר, לא קשה יותר.</p>
+      <p class="lead">בונים ומטמיעים מערכות CRM ואוטומציות לעסק שלכם, במחלקות השיווק, המכירות, התפעול והכספים, כדי לייעל את התהליכים הפנים-ארגוניים ולתת לצוות שלכם לעבוד חכם יותר, לא קשה יותר.</p>
       <div class="hero-ctas">
         <a class="btn btn-primary" href="https://wa.me/972522219958?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A0%D7%99%20%D7%A8%D7%95%D7%A6%D7%94%20%D7%9C%D7%AA%D7%90%D7%9D%20%D7%A9%D7%99%D7%97%D7%AA%20%D7%90%D7%99%D7%A4%D7%99%D7%95%D7%9F" target="_blank" rel="noopener">לשיחת איפיון לחץ כאן</a>
         <a class="btn btn-ghost" href="#services">לצפייה בשירותים</a>
@@ -941,22 +968,22 @@
       <div class="service-card">
         <div class="service-ico"><svg viewBox="0 0 24 24" fill="none"><rect x="2.5" y="3" width="6" height="18" rx="2" fill="currentColor" opacity=".28"/><rect x="9.5" y="3" width="6" height="11" rx="2" fill="currentColor" opacity=".5"/><rect x="16.5" y="7.5" width="5" height="13.5" rx="2" fill="currentColor"/><path d="M11 8.6l1.6 1.6 3-3" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
         <h3>הטמעת מערכות <span dir="ltr">CRM</span></h3>
-        <p><span dir="ltr">CRM</span> מותאם בול לתהליך המכירה והשירות שלכם — סטטוסים, שדות והרשאות בדיוק כמו שהעסק עובד, לא ההפך. אנשי המכירות מוכרים יותר כי שום ליד לא נופל בין הכיסאות ואין עוד פעולות ידניות שגוזלות זמן. ולכם, כבעלים, יש סוף־סוף תמונה ברורה על כל מה שקורה בעסק — בזמן אמת.</p>
+        <p><span dir="ltr">CRM</span> מותאם בול לתהליך המכירה והשירות שלכם: סטטוסים, שדות והרשאות בדיוק כמו שהעסק עובד, לא ההפך. אנשי המכירות מוכרים יותר כי שום ליד לא נופל בין הכיסאות ואין עוד פעולות ידניות שגוזלות זמן. ולכם, כבעלים, יש סוף־סוף תמונה ברורה על כל מה שקורה בעסק, בזמן אמת.</p>
       </div>
       <div class="service-card">
         <div class="service-ico"><svg viewBox="0 0 24 24" fill="none"><rect x="2" y="4.5" width="20" height="14" rx="3" fill="currentColor" opacity=".22"/><path d="M9.8 8.6v6.8l6.2-3.4z" fill="currentColor"/><circle cx="18.6" cy="5.4" r="2.6" fill="currentColor"/><path d="M17.5 5.4l.7.7 1.3-1.3" stroke="#fff" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
         <h3>אוטומציה לוובינרים</h3>
-        <p>לכל נרשם יוצאת הודעת וואטסאפ, גם לפני השידור וגם אחריו. המערכת בודקת מי בפועל נכנס לשידור ומי לא, ומעדכנת את זה לבד ב־<span dir="ltr">CRM</span>. מי שצפה מקבל הודעות ספציפיות עבורו, מי שלא הגיע מקבל הודעה שונה לגמרי — הכל אוטומטי, בלי שאתם נוגעים בזה.</p>
+        <p>לכל נרשם יוצאת הודעת וואטסאפ, גם לפני השידור וגם אחריו. המערכת בודקת מי בפועל נכנס לשידור ומי לא, ומעדכנת את זה לבד ב־<span dir="ltr">CRM</span>. מי שצפה מקבל הודעות ספציפיות עבורו, מי שלא הגיע מקבל הודעה שונה לגמרי. הכל אוטומטי, בלי שאתם נוגעים בזה.</p>
       </div>
       <div class="service-card">
         <div class="service-ico"><svg viewBox="0 0 24 24" fill="none"><path d="M12 2.5A8.5 8.5 0 0 0 4.6 15.2L3.5 20.5l5.5-1.2A8.5 8.5 0 1 0 12 2.5z" fill="currentColor" opacity=".24"/><path d="M8.5 12l2.2 2.2L15.8 9" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/><path d="M17 6.4l.9-1.7 1.7.9-.9 1.7z" fill="currentColor"/></svg></div>
         <h3>אוטומציות וואטסאפ</h3>
-        <p>ליד שמשאיר פרטים ולא מקבל תגובה תוך דקות שוכח שהוא בכלל פנה אליכם. הודעת וואטסאפ אוטומטית יוצאת מיד, שומרת על האינטראקציה רותחת ומובילה לשיחה שכבר לא קרה ומנוכרת. ככה כל ליד מרגיש שמטפלים בו באמת — והצוות לא צריך לרדוף אחרי אף אחד.</p>
+        <p>ליד שמשאיר פרטים ולא מקבל תגובה תוך דקות שוכח שהוא בכלל פנה אליכם. הודעת וואטסאפ אוטומטית יוצאת מיד, שומרת על האינטראקציה רותחת ומובילה לשיחה שכבר לא קרה ומנוכרת. ככה כל ליד מרגיש שמטפלים בו באמת, והצוות לא צריך לרדוף אחרי אף אחד.</p>
       </div>
       <div class="service-card">
         <div class="service-ico"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="3.4" fill="currentColor"/><circle cx="5" cy="6.5" r="2.6" fill="currentColor" opacity=".5"/><circle cx="19" cy="6.5" r="2.6" fill="currentColor" opacity=".5"/><circle cx="12" cy="20" r="2.6" fill="currentColor" opacity=".5"/><path d="M9.4 10.3L6.6 8M14.6 10.3l2.8-2.3M12 15.4V18" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></div>
         <h3>אוטומציות במחלקות העיקריות</h3>
-        <p>שיווק טוב לא נגמר כשהליד נכנס — שם העבודה רק מתחילה: תגובה מהירה, תיעוד, הצעה ומעקב שלא נופל בין המחלקות. ליד חדש מקבל הודעה, נכנס למערכת, מקבל תזכורת לשיחה, ואם לא ענה נפתח follow-up אוטומטי בלי שאף אחד יזכור לעשות את זה. ככה מכירות, שיווק ותפעול זזים כמו קו ייצור אחד — לא שלוש מחלקות שמתקשרות באקסלים.</p>
+        <p>שיווק טוב לא נגמר כשהליד נכנס. שם העבודה רק מתחילה: תגובה מהירה, תיעוד, הצעה ומעקב שלא נופל בין המחלקות. ליד חדש מקבל הודעה, נכנס למערכת, מקבל תזכורת לשיחה, ואם לא ענה נפתח follow-up אוטומטי בלי שאף אחד יזכור לעשות את זה. ככה מכירות, שיווק ותפעול זזים כמו קו ייצור אחד, לא שלוש מחלקות שמתקשרות באקסלים.</p>
       </div>
     </div>
   </div>
@@ -981,8 +1008,8 @@
         <div class="journey-step">
           <div class="journey-card top" style="grid-column:1">
             <div class="journey-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M6.5 3.5c1 0 2 .7 2.3 1.7l.7 2a2 2 0 0 1-.5 2L7.5 10.7a12 12 0 0 0 5.8 5.8l1.5-1.5a2 2 0 0 1 2-.5l2 .7c1 .3 1.7 1.3 1.7 2.3V19a2 2 0 0 1-2.2 2C10.8 20.6 3.4 13.2 3 5.7A2 2 0 0 1 5 3.5z"/></svg></div>
-            <h4>שיחת אפיון ראשונית</h4>
-            <p>מדברים על העסק שלכם ועל הכאבים הקיימים — כדי להבין אם ואיך אוטומציה תעזור.</p>
+            <h4>שיחת היכרות</h4>
+            <p>מכירים את העסק שלכם ואת האתגרים שאיתם אתם מתמודדים, ומראים לכם דוגמאות לפתרונות שכבר בנינו ללקוחות דומים.</p>
           </div>
           <div class="journey-node" style="grid-column:1">01</div>
         </div>
@@ -992,7 +1019,7 @@
           <div class="journey-card bottom" style="grid-column:2">
             <div class="journey-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M20 20l-4.35-4.35"/></svg></div>
             <h4>איפיון מעמיק</h4>
-            <p>יורדים לעומק התהליך העסקי שלכם — כל מערכת וכל נקודת החלטה במסע הלקוח.</p>
+            <p>יורדים לעומק התהליך העסקי שלכם: כל מערכת וכל נקודת החלטה במסע הלקוח.</p>
           </div>
         </div>
 
@@ -1000,7 +1027,7 @@
           <div class="journey-card top" style="grid-column:3">
             <div class="journey-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M6 3h8l4 4v14H6z"/><path d="M14 3v4h4M9 12h6M9 16h6"/></svg></div>
             <h4>תרשים איפיון ב-PDF</h4>
-            <p>מקבלים מאיתנו מסמך מסודר שממפה את כל התהליך המוצע — לפני שנוגעים בבנייה.</p>
+            <p>מקבלים מאיתנו מסמך מסודר שממפה את כל התהליך המוצע, לפני שנוגעים בבנייה.</p>
           </div>
           <div class="journey-node" style="grid-column:3">03</div>
         </div>
@@ -1018,7 +1045,7 @@
           <div class="journey-card top" style="grid-column:5">
             <div class="journey-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M14.5 3.5l6 6-2 2-6-6z"/><path d="M13 6l-8.5 8.5a2 2 0 0 0 0 2.8l1.2 1.2a2 2 0 0 0 2.8 0L17 10"/></svg></div>
             <h4>בניית אוטומציות וטסטים</h4>
-            <p>בונים שלב אחרי שלב ובודקים כל תרחיש — לפני שזה נוגע בלקוחות האמיתיים שלכם.</p>
+            <p>בונים שלב אחרי שלב ובודקים כל תרחיש, לפני שזה נוגע בלקוחות האמיתיים שלכם.</p>
           </div>
           <div class="journey-node" style="grid-column:5">05</div>
         </div>
@@ -1028,7 +1055,7 @@
           <div class="journey-card bottom" style="grid-column:6">
             <div class="journey-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M12 2c3 1 5 4 5 8 0 3-1.5 5.5-3 7l-2 2-2-2c-1.5-1.5-3-4-3-7 0-4 2-7 5-8z"/><circle cx="12" cy="9" r="1.6"/><path d="M9 16l-3 3M15 16l3 3"/></svg></div>
             <h4>עלייה לאוויר ותחזוקה</h4>
-            <p>המערכת עולה לאוויר, והליווי ממשיך — שיפורים ותמיכה גם אחרי ההשקה.</p>
+            <p>המערכת עולה לאוויר, והליווי ממשיך: שיפורים ותמיכה גם אחרי ההשקה.</p>
           </div>
         </div>
       </div>
@@ -1053,7 +1080,7 @@
       <div class="scope-copy">
         <span class="eyebrow">מה מקבלים בסוף שלב האיפיון</span>
         <h3 style="margin-top:12px;">תרשים איפיון מלא, בקובץ PDF</h3>
-        <p>לפני שמתחילים לבנות, תקבלו מסמך ברור שממפה את כל התהליך — כל שלב, כל מערכת וכל נקודת החלטה — כדי שתדעו בדיוק על מה אתם מאשרים לפני שמתחילה הבנייה בפועל.</p>
+        <p>לפני שמתחילים לבנות, תקבלו מסמך ברור שממפה את כל התהליך: כל שלב, כל מערכת וכל נקודת החלטה, כדי שתדעו בדיוק על מה אתם מאשרים לפני שמתחילה הבנייה בפועל.</p>
         <button class="btn btn-primary" type="button" onclick="openModal('scopeModal', this)">לצפייה בדוגמת איפיון מלאה</button>
       </div>
     </div>
@@ -1065,7 +1092,7 @@
     <div class="scope-modal-head">
       <div>
         <h3 id="scopeModalTitle">דוגמת תרשים איפיון</h3>
-        <span>ליד עסק בעולם הביטוח — כך נראה איפיון אמיתי שאנחנו מוסרים</span>
+        <span>ליד עסק בעולם הביטוח: כך נראה איפיון אמיתי שאנחנו מוסרים</span>
       </div>
       <button class="scope-modal-close" type="button" aria-label="סגירה" onclick="closeModal('scopeModal')">✕</button>
     </div>
@@ -1073,11 +1100,11 @@
       <div class="flow-col">
         <div class="flow-box t-source"><strong>קמפיין ממומן / פנייה אורגנית</strong><span>מודעה בפייסבוק או פנייה ישירה מהלקוח</span></div>
         <div class="flow-arrow"></div>
-        <div class="flow-box t-action"><strong>כניסת ליד ל-CRM</strong><span>נקלט אוטומטית — בלי כפילויות ובלי ליד שנופל בין הכיסאות</span></div>
+        <div class="flow-box t-action"><strong>כניסת ליד ל-CRM</strong><span>נקלט אוטומטית: בלי כפילויות ובלי ליד שנופל בין הכיסאות</span></div>
         <div class="flow-arrow"></div>
         <div class="flow-box t-message"><strong>הודעת פתיחה בוואטסאפ</strong><span>יוצאת אוטומטית תוך שניות מרגע הכניסה</span></div>
         <div class="flow-arrow"></div>
-        <div class="flow-box t-action"><strong>שיחת תיאום קצרה</strong><span>שיחת טלפון ראשונית — לא שיחת מכירה</span></div>
+        <div class="flow-box t-action"><strong>שיחת תיאום קצרה</strong><span>שיחת טלפון ראשונית, לא שיחת מכירה</span></div>
         <div class="flow-arrow"></div>
         <div class="flow-diamond-wrap"><div class="flow-diamond"></div><div class="flow-diamond-label">תוצאת השיחה?</div></div>
       </div>
@@ -1104,7 +1131,7 @@
         <div class="flow-arrow"></div>
         <div class="flow-box t-message"><strong>תזכורת אוטומטית</strong><span>נשלחת ללקוח בבוקר הפגישה עצמה</span></div>
         <div class="flow-arrow"></div>
-        <div class="flow-box t-action"><strong>שיחת מכירה</strong><span>פרונטלי, בזום או בטלפון — לפי מה שהכי נוח ללקוח</span></div>
+        <div class="flow-box t-action"><strong>שיחת מכירה</strong><span>פרונטלי, בזום או בטלפון, לפי מה שהכי נוח ללקוח</span></div>
         <div class="flow-arrow"></div>
         <div class="flow-box t-action"><strong>רצף סגירת עסקה</strong><span>רשימת מסמכים נדרשים וקישור לחתימה דיגיטלית נשלחים אוטומטית</span></div>
         <div class="flow-arrow"></div>
@@ -1135,10 +1162,10 @@
       <p>האתר הזה סטטי לחלוטין: אין בו Google Analytics, Meta Pixel או כל כלי מעקב אחר, ואין קובצי Cookie לצרכי שיווק, פרסום או סטטיסטיקה. אנחנו לא אוספים ולא עוקבים אחרי הגלישה שלך באתר.</p>
       <p>האתר כן שומר מקומית בדפדפן שלך (localStorage) שני דברים בלבד, לנוחיותך: (1) אם כבר סגרת את באנר העוגיות, כדי לא להציג אותו שוב; (2) העדפות נגישות שבחרת בתפריט הנגישות (גודל טקסט, ניגודיות וכו'). המידע הזה נשמר רק על המכשיר שלך, לא מגיע אלינו ולא לשום שרת.</p>
       <h4>יצירת קשר דרך האתר</h4>
-      <p>כפתורי "לשיחת איפיון לחץ כאן" באתר לא מעבירים שום טופס ולא אוספים שום פרט — הם פשוט פותחים שיחת וואטסאפ ישירה בינך לבין המספר העסקי שלנו, עם הודעת פתיחה כללית שאתה יכול לשנות לפני השליחה. האתר עצמו לא שומר, לא מעביר ולא מקבל שום מידע כתוצאה מהלחיצה — עד שאתה בעצמו שולח הודעה בוואטסאפ, ומאותו רגע השיחה מתנהלת בוואטסאפ שלך מול וואטסאפ העסקי שלנו, בכפוף למדיניות הפרטיות של וואטסאפ עצמה.</p>
+      <p>כפתורי "לשיחת איפיון לחץ כאן" באתר לא מעבירים שום טופס ולא אוספים שום פרט. הם פשוט פותחים שיחת וואטסאפ ישירה בינך לבין המספר העסקי שלנו, עם הודעת פתיחה כללית שאתה יכול לשנות לפני השליחה. האתר עצמו לא שומר, לא מעביר ולא מקבל שום מידע כתוצאה מהלחיצה, עד שאתה בעצמו שולח הודעה בוואטסאפ, ומאותו רגע השיחה מתנהלת בוואטסאפ שלך מול וואטסאפ העסקי שלנו, בכפוף למדיניות הפרטיות של וואטסאפ עצמה.</p>
       <p>הפרטים אינם מועברים או משותפים עם שום צד שלישי מעבר לכך. בעל השליטה במידע שנשלח דרך וואטסאפ הוא דור רון (העוסק המורשה מפעיל האתר). </p>
       <h4>הזכויות שלך</h4>
-      <p>מאחר שהאתר עצמו לא אוסף ולא שומר עליך שום פרט במאגר מידע, אין ברשותנו "רשומה" שלך למחוק או לתקן דרך האתר. אם תרצה שנמחק שיחת וואטסאפ קודמת מולנו, פשוט תבקש זאת ישירות בהודעה — ונמחק את השיחה מהצד שלנו.</p>
+      <p>מאחר שהאתר עצמו לא אוסף ולא שומר עליך שום פרט במאגר מידע, אין ברשותנו "רשומה" שלך למחוק או לתקן דרך האתר. אם תרצה שנמחק שיחת וואטסאפ קודמת מולנו, פשוט תבקש זאת ישירות בהודעה, ונמחק את השיחה מהצד שלנו.</p>
       <h4>קניין רוחני</h4>
       <p>כל התוכן, המיתוג, הלוגו והעיצוב באתר זה שייכים ל-Scale (דור רון) ואין להעתיק או לעשות בהם שימוש מסחרי ללא אישור.</p>
       <h4>יצירת קשר בנושא פרטיות</h4>
@@ -1182,7 +1209,7 @@
     <div class="proof-head">
       <div>
         <span class="eyebrow">מה אומרים עלינו</span>
-        <h2>עדויות מלקוחות 🚀</h2>
+        <h2>לקוחות ממליצים 🚀</h2>
       </div>
     </div>
     <div class="testi-sub">
@@ -1200,7 +1227,7 @@
             <div class="play-btn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div>
           </div>
           <div class="video-social-footer">
-            <div class="video-names"><strong>דביר טפירו</strong><span>שווים יותר — מועדון הטבות לאנשי מילואים וכוחות הביטחון</span></div>
+            <div class="video-names"><strong>דביר טפירו</strong><span>שווים יותר: מועדון הטבות לאנשי מילואים וכוחות הביטחון</span></div>
             <a class="social-badge ig" href="https://www.instagram.com/shavimyoter/" target="_blank" rel="noopener" aria-label="אינסטגרם"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1" fill="currentColor" stroke="none"/></svg></a>
           </div>
         </div>
@@ -1296,9 +1323,9 @@
     <div class="about-photo"><div class="about-photo-glow"></div><img src="assets/profile-about-cutout.png" alt="דור, מייסד Scale"></div>
     <div>
       <span class="eyebrow">קצת עליי</span>
-      <h2>היי, אני דור רון — מייסד Scale</h2>
+      <h2>היי, אני דור רון, מייסד Scale</h2>
       <p class="bio">בן 28, נכנסתי לעולם האוטומציות ממש במקרה, תוך כדי הסבב מילואים הראשון שלי. ומאז אני מתמחה בעבודה עם בעלי עסקים בעולם השירות: הטמעת מערכות CRM (בדגש על Fireberry), אוטומציות וואטסאפ ווובינר, ובאופן כללי בליווי טכנולוגי של עסקי שירות מקצה לקצה.</p>
-      <p class="bio">אני מאמין שאוטומציה טובה נבנית רק אחרי שיש תהליך ברור ומסודר בארגון — ואוטומציה נכנסת כדי להפוך אותו לאוטומטי.</p>
+      <p class="bio">אני מאמין שאוטומציה טובה נבנית רק אחרי שיש תהליך ברור ומסודר בארגון, ואוטומציה נכנסת כדי להפוך אותו לאוטומטי.</p>
       <div class="about-sign">דור רון, Scale</div>
     </div>
   </div>
@@ -1326,7 +1353,7 @@
 
 <div class="cookie-banner" id="cookieBanner">
   <div class="cookie-banner-inner">
-    <p>אתר זה אינו משתמש בעוגיות מעקב, פרסום או אנליטיקס — רק בעוגיות טכניות הכרחיות (ככל שקיימות) לצורך תפעול תקין של האתר. <a href="#" onclick="event.preventDefault(); openModal('privacyModal', this);">למדיניות הפרטיות המלאה</a></p>
+    <p>אתר זה אינו משתמש בעוגיות מעקב, פרסום או אנליטיקס, רק בעוגיות טכניות הכרחיות (ככל שקיימות) לצורך תפעול תקין של האתר. <a href="#" onclick="event.preventDefault(); openModal('privacyModal', this);">למדיניות הפרטיות המלאה</a></p>
     <button class="btn btn-primary" type="button" onclick="dismissCookieBanner()">הבנתי</button>
   </div>
 </div>
@@ -1375,8 +1402,23 @@
       });
       var panel = document.getElementById('a11yPanel');
       if(panel) panel.classList.remove('open');
+      closeNavMenu();
     }
   });
+
+  /* ---------- MOBILE NAV MENU ---------- */
+  function toggleNavMenu(btn){
+    var links = document.getElementById('navLinks');
+    if(!links) return;
+    var open = links.classList.toggle('open');
+    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+  }
+  function closeNavMenu(){
+    var links = document.getElementById('navLinks');
+    var btn = document.querySelector('.nav-toggle');
+    if(links) links.classList.remove('open');
+    if(btn) btn.setAttribute('aria-expanded', 'false');
+  }
 
   /* ---------- MODAL FOCUS MANAGEMENT ---------- */
   var modalLastTrigger = {};
