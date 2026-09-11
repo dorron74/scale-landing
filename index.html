@@ -1279,6 +1279,18 @@
             <a class="social-badge fb" href="https://www.facebook.com/Dato.Tamir/" target="_blank" rel="noopener" aria-label="פייסבוק"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M13.5 21v-8h2.7l.4-3.1h-3.1V8c0-.9.25-1.5 1.55-1.5H16.7V3.7c-.28-.04-1.25-.12-2.37-.12-2.35 0-3.96 1.43-3.96 4.07V10H7.6v3.1h2.77v8h3.13z"/></svg></a>
           </div>
         </div>
+        <div class="testi-video-card v2 has-footer">
+          <div class="video-media" role="button" tabindex="0" aria-label="הפעלה או השהיה של סרטון העדות" onclick="toggleVideo(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleVideo(this);}">
+            <video playsinline preload="metadata" onplay="this.closest('.testi-video-card').classList.add('playing')" onpause="this.closest('.testi-video-card').classList.remove('playing')" src="assets/videos/testi-6.mp4">
+              <track kind="captions" srclang="he" label="עברית" src="assets/videos/testi-6.vtt" default>
+            </video>
+            <div class="play-btn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div>
+          </div>
+          <div class="video-social-footer">
+            <div class="video-names"><strong>עומרי בן דוד</strong><span>מפתח אפליקציות, מייסד PREZLO ו״יש דיבור״</span></div>
+            <a class="social-badge ig" href="https://www.instagram.com/omri_benda/" target="_blank" rel="noopener" aria-label="אינסטגרם"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1" fill="currentColor" stroke="none"/></svg></a>
+          </div>
+        </div>
       </div>
     </div>
   </div>
